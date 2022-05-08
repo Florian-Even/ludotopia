@@ -9,6 +9,7 @@
     "eslint:fix": "yarn eslint --fix"
   },
   "devDependencies": {
+    "@nuxtjs/color-mode": "^3.0.2",
     "@nuxtjs/eslint-config-typescript": "^10.0.0",
     "eslint": "^8.15.0",
     "nuxt": "3.0.0-rc.2",
