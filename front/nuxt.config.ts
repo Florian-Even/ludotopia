@@ -4,5 +4,9 @@ import { defineNuxtConfig } from 'nuxt'
 export default defineNuxtConfig({
   typescript: {
     strict: true
-  }
+  },
+
+  css: [
+    'the-new-css-reset'
+  ]
 })

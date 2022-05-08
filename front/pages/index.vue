@@ -1,6 +1,8 @@
 <template>
   <div>
-    This is a page
+    <h1>
+      This is a page
+    </h1>
   </div>
 </template>
 
@@ -8,8 +10,5 @@
 import { defineComponent } from 'vue'
 
 export default defineComponent({
-  setup() {
-
-  },
 })
 </script>
