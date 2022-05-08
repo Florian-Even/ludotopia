@@ -1,29 +1,29 @@
 services:
-  postgres:
+  users_app_postgres:
     image: postgres:14.2
     volumes:
-      - postgres:/var/lib/postgresql/data
+      - users_app_postgres:/var/lib/postgresql/data
     environment:
       POSTGRES_USER: $PG_USER
       POSTGRES_PASSWORD: $PG_PASSWORD
-      POSTGRES_DB: $PG_DB
+      POSTGRES_DB: $USERS_APP_DB
     ports:
       - 5432
 
-  api:
+  users_app:
     image: ruby:3.1.2
     working_dir: /app
     depends_on:
-      - postgres
+      - users_app_postgres
     volumes:
-      - ./api:/app
-      - api_bundle:/usr/local/bundle
+      - ./users_app:/app
+      - users_app_bundle:/usr/local/bundle
     environment:
-      PGHOST: postgres
+      PGHOST: users_app_postgres
       PGPORT: 5432
       PGUSER: $PG_USER
       PGPASSWORD: $PG_PASSWORD
-      PGDB: $PG_DB
+      PGDB: $USERS_APP_DB
     command: [bundle, exec, puma]
     ports:
       - 3001:3000
@@ -43,7 +43,7 @@ services:
       - 24678:24678 # vite port
 
 volumes:
-  postgres:
-  api_bundle:
+  users_app_postgres:
+  users_app_bundle:
   front_node_modules:
   front_nuxt:
