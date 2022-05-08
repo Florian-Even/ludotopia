@@ -26,10 +26,23 @@ services:
       PGDB: $PG_DB
     command: [bundle, exec, puma]
     ports:
-      - 127.0.0.1:3000:9292
+      - 127.0.0.1:3000:3000
     stdin_open: true
     tty: true
+
+  front:
+    image: node:16
+    working_dir: /app
+    volumes:
+      - ./front:/app
+      - front_node_modules:/app/node_modules
+      - front_nuxt:/app/.nuxt
+    command: [yarn, dev]
+    ports:
+      - 127.0.0.1:3001:3000
 
 volumes:
   postgres:
   api_bundle:
+  front_node_modules:
+  front_nuxt:
