@@ -1,0 +1,15 @@
+.dark-mode {
+  --background-color: #121212;
+  --text-default-1-color: #fff;
+}
+
+.light-mode {
+  --background-color: #ffffff;
+  --text-default-1-color: #121212;
+
+}
+
+html {
+  background-color: var(--background-color);
+  color: var(--text-default-1-color);
+}

@@ -6,7 +6,12 @@ export default defineNuxtConfig({
     strict: true
   },
 
+  modules: [
+    '@nuxtjs/color-mode'
+  ],
+
   css: [
+    '@/assets/css/global.scss',
     'the-new-css-reset'
   ]
 })
