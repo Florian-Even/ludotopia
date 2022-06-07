@@ -8,6 +8,11 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
+      resources :client_apps, only: %i[index create update destroy] do
+        member do
+          patch :set_new_client_id
+        end
+      end
       resources :users, only: %i[index]
     end
   end

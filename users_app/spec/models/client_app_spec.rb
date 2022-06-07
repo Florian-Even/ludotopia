@@ -60,6 +60,27 @@ RSpec.describe ClientApp, type: :model do
     end
   end
 
+  describe "#self.mapped_render" do
+    let!(:client_apps) { create_list(:client_app, 2) }
+
+    it "render the list of client_apps" do
+      expect(described_class.mapped_render).to match_array(
+        [
+          {
+            client_id: client_apps[0].client_id,
+            app_name: client_apps[0].app_name,
+            redirect_uri: client_apps[0].redirect_uri,
+          },
+          {
+            client_id: client_apps[1].client_id,
+            app_name: client_apps[1].app_name,
+            redirect_uri: client_apps[1].redirect_uri,
+          },
+        ]
+      )
+    end
+  end
+
   describe "#set_new_client_id" do
     context "when client_id is not set" do
       it "set a uuid" do

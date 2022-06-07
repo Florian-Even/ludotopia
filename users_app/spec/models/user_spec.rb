@@ -17,7 +17,7 @@
 #
 require "rails_helper"
 
-RSpec.describe User, type: :model do # rubocop:disable Metrics/BlockLength
+RSpec.describe User, type: :model do
   describe "email" do
     it "can be read" do
       user = create(:user, email: "bonjour")

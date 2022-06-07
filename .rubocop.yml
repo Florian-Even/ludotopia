@@ -15,3 +15,10 @@ Style/TrailingCommaInArrayLiteral:
 Style/FrozenStringLiteralComment:
   Exclude:
     - users_app/db/**/*.rb
+
+Metrics/BlockLength:
+  Exclude:
+    - users_app/spec/**/*.rb
+
+Style/TrailingCommaInHashLiteral:
+  Enabled: false

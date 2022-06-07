@@ -18,6 +18,10 @@
 class ClientApp < ApplicationRecord
   before_create :set_new_client_id
 
+  def self.mapped_render
+    all.map { |client_app| Entities::ClientApp.new(client_app).mapped }
+  end
+
   def set_new_client_id
     self.client_id = SecureRandom.uuid
   end
