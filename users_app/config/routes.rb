@@ -11,4 +11,10 @@ Rails.application.routes.draw do
       resources :users, only: %i[index]
     end
   end
+
+  namespace :oauth2 do
+    namespace :v1 do
+      resources :auth, only: %i[index create]
+    end
+  end
 end

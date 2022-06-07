@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ludotopia Auth</title>
+  <meta charset="UTF-8">
+</head>
+<body>
+  <form action="/oauth2/v1/auth" method="POST">
+    <input type="hidden" id="client_id" value="<%= params[:client_id] %>">
+    <input type="hidden" id="redirect_uri" value="<%= params[:redirect_uri] %>">
+
+    <label for="name">Name :</label>
+    <input type="text" id="name" name="name"><br>
+    <input type="submit" value="Login">
+  </form>
+</body>
+</html>
