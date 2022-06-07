@@ -21,11 +21,17 @@ gem "tzinfo-data", platforms: %i[mingw mswin x64_mingw jruby]
 # gem "rack-cors"
 
 group :development, :test do
+  # Comment table structure in model files
+  gem "annotate", "~> 3.2.0"
+
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[mri mingw x64_mingw]
 
-  gem "rspec-rails", "~> 5.1.2"
+  # Helper to create object in tests
   gem "factory_bot_rails", "~> 6.2.0"
+
+  # Test suite
+  gem "rspec-rails", "~> 5.1.2"
 end
 
 group :development do

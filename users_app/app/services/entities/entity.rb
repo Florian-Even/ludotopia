@@ -19,14 +19,16 @@ module Entities
       values
     end
 
-    def self.string(name, value = nil, &block)
-      raise Error, "String name need to be a symbol" unless name.instance_of?(Symbol)
+    def self.string(key, value = nil, &block)
+      unless key.instance_of?(Symbol) || key.instance_of?(String)
+        raise Error, "String key need to be a symbol or a string"
+      end
 
       raise Error, "String value must be nil or a string" unless value.nil? || value.instance_of?(String)
 
-      options[name] = block and return if value.nil?
+      options[key] = block and return if value.nil?
 
-      options[name] = value
+      options[key] = value
     end
 
     def self.options

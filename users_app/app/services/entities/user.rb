@@ -2,6 +2,6 @@
 
 module Entities
   class User < Entities::Entity
-    string :username, &:name
+    string :name, &:name
   end
 end

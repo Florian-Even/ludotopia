@@ -6,5 +6,20 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
 
-  resources :users, only: %i[index]
+  namespace :api do
+    namespace :v1 do
+      resources :client_apps, only: %i[index create update destroy] do
+        member do
+          patch :set_new_client_id
+        end
+      end
+      resources :users, only: %i[index]
+    end
+  end
+
+  namespace :oauth2 do
+    namespace :v1 do
+      resources :auth, only: %i[index create]
+    end
+  end
 end
