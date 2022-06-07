@@ -11,3 +11,7 @@ Style/Documentation:
 
 Style/TrailingCommaInArrayLiteral:
   Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Exclude:
+    - users_app/db/**/*.rb

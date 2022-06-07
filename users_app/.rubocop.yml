@@ -1,13 +1,2 @@
-AllCops:
-  Exclude:
-    - bin/bundle
-  NewCops: enable
-
-Style/StringLiterals:
-  EnforcedStyle: double_quotes
-
-Style/Documentation:
-  Enabled: false
-
-Style/TrailingCommaInArrayLiteral:
-  Enabled: false
+inherit_from:
+  - ../.rubocop.yml
